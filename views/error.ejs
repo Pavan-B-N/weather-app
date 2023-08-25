@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>!!!</title>
+    <style>
+        body{
+            background-color: blueviolet;
+        }
+        #errorhead,#message{
+            color:#FAC213;
+            font-size:5rem;
+            font-family: 'Bebas Neue', cursive;
+            font-weight: bold;
+            
+        }
+        #errimg{
+            display: block;
+            height: 205px;
+            width: 250px;
+            border-radius: 100%;
+            pointer-events: none;
+        }
+        #message{
+            font-size: 3.2rem;
+            color: #16003B;
+        }
+        p{
+            color:#F8CB2E;
+            font-size:3.2rem;
+            font-family: 'Bebas Neue', cursive;
+            font-weight: bold;
+            text-decoration: line-through;
+            text-decoration-color: red;
+        }
+        a{
+            color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1 id="errorhead">Error 404,
+            <iframe id="errimg" src="https://giphy.com/embed/8L0Pky6C83SzkzU55a" frameBorder="0" ></iframe>
+            <h1 id="message"><%=reason%></h1>
+        </h1>
+        <h2>
+            <a href="/">Get to Home</a>
+        </h2>
+    </center>
+</body>
+</html>

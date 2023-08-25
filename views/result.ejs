@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <style>
+        body{
+            background-color: blueviolet;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 2rem;
+            color: blue;
+        }
+        #container{
+            width: 40%;
+            margin: auto;
+            background-color: #DBDFFD;
+            padding: 2em;
+            margin-top: 2em;
+            height: auto;
+        }
+        #header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: -2.5em;
+        }
+        #header>h2{
+            font-size:7rem;
+            font-weight: bold;
+            line-height: 0.2em;
+            margin-top: -0.2em;
+            font-family: 'Bebas Neue', cursive;
+            color: #001D6E;
+        }
+        #img{
+            background-color: #A5BECC;
+            margin: 1.5em;
+            border: 3px solid ghostwhite;
+            border-radius: 50%;
+        }
+        .info{
+            display: flex;
+            margin-right: 1em;
+            width: 100%;
+            padding: 0.7em;
+            background-color: #FFFFFF;
+            margin-bottom: 0.2em;
+            
+        }
+        .info>h2{
+            margin-top: 0em;
+            margin-left: 1em;
+            font-size: 2.3rem;
+        }
+        .info-icon{
+            height: 2em;
+            width: 2em;
+        }
+       .btn{
+           background-color: darkblue;
+       }
+       .btn:hover{
+           background-color: blue;
+       }
+
+     
+       @media screen and (max-width:1000px){
+        #container{
+            width:80%;
+            height: auto;
+            text-align: center;
+            padding: 0.3em;
+        }
+        #header>h2{
+            font-size: 3.2rem;
+        }
+        #img{
+            width:4em;
+            height:4em;
+        }
+        
+       }
+       @media screen and (max-width){
+        .info>h2{
+            font-size: 0.5rem;
+        }
+       }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h2><%=CityName%></h2>
+            <img src="<%=iconurl%>" alt="error" id="img">
+        </div>
+        <div>
+            <div class="progress" >
+                <div class="progress-bar progress-bar-success" role="progressbar" 
+                aria-valuemin="0" aria-valuemax="100" style="width:0%" id="22">
+                    Temp is <%=temperature%>
+                </div>
+              </div>
+              
+              <div class="info">
+                <img src="https://cdn-icons-png.flaticon.com/512/3815/3815449.png" class="info-icon" >
+                <h2>Temperature : <%=temperature%></h2>
+              </div>
+              <div class="info">
+                <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png" class="info-icon" >
+                <h2>Humidity : <%=Humidity%></h2>
+            </div>
+            <div class="info">
+                <img src="https://cdn-icons-png.flaticon.com/512/1839/1839341.png" class="info-icon" >
+                <h2>Pressure : <%=Pressure%></h2>
+            </div>
+            <div class="info">
+                <img src="https://cdn-icons-png.flaticon.com/512/3579/3579555.png" class="info-icon" >
+                <h2>WindSpeed : <%=WindSpeed%></h2>
+            </div>
+            <div class="info">
+                <img src="https://cdn-icons-png.flaticon.com/512/414/414825.png" class="info-icon" >
+                <h2>Clouds : <%=Clouds%></h2>
+            </div>
+            <div class="info">
+                <img src="https://cdn-icons.flaticon.com/png/512/5683/premium/5683325.png?token=exp=1654403245~hmac=49cadebb09e289ec3b7f0f0100d606a9" class="info-icon" >
+                <h2>Weather Description : <%=weatherDescription%></h2> 
+            </div>
+        </div>
+        <form action="/back" method="post">
+            <button class="btn btn-primary">Back</button>
+        </form>
+        
+        
+    </div>
+    <script>
+
+        x=document.getElementById("22")
+        y=x.style.width="<%=temperature%>"+"%";
+        console.log(y);
+        if(y<"20%"){
+            document.getElementById("22").style.background="#37E2D5";
+        }
+        else if(y>"25%"){
+            document.getElementById("22").style.background="red";
+        }
+
+    </script>
+</body>
+</html>

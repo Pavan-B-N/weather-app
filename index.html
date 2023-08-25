@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+    <!-- font family management -->
+    <!--  -->
+    <style>
+        body{
+            background-image: url("https://wallpapercave.com/wp/aZSazBV.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+        #container{
+            border: 2px solid black;
+            border-radius: 10px;
+            color: wheat;
+            width: 40%;
+            height: 400px;
+            position: relative;
+            top:170px;
+            background-color: #332FD0;
+        }
+        #img_h{
+            display: flex;
+            color: aqua;  
+        }
+        #img_h>img{
+            margin: 17px;
+        }
+         #img_h>h1{
+            font-family: 'Bebas Neue', cursive;
+         }   
+            
+        
+        input{
+            width:70%;
+            padding:1em;
+            padding-left:3em;
+            background-image: url("https://cdn-icons-png.flaticon.com/128/684/684908.png");
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size: contain;
+            position: relative;
+            top:50px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+        }
+        button{
+            width: 80%;
+            padding: 1em;
+            position: relative;
+            top:170px;
+            background-color: #FFD32D;
+            font-size: 1.3rem;
+            font-family: verdana;
+            border-radius: 15px;
+        }
+        button:hover{
+            background-color: #FFC300;
+        }
+        @media screen and (max-width:600px){
+            body{
+                background-repeat: repeat;
+                height: 100vh;
+            }
+            #container{
+                width: 95%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <center>
+        <div id="container">
+            <form id="form" action="/" method="post">
+                <div id="img_h">
+                    <img src="https://cdn-icons-png.flaticon.com/128/869/869869.png" alt="sun-png" height="50px" width="50px">
+                    <h1>weather</h1>
+                </div>
+                
+                <input type="text" name="city" placeholder="Enter city name" autofocus autocomplete="off" required><br>
+                <button type="submit">Find weather</button>
+            </form>
+        </div>
+    </center>
+</body>
+</html>
